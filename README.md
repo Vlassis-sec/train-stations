@@ -1,50 +1,78 @@
-# React + TypeScript + Vite
+# Train Stations
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is my first project using React and TypeScript. I built it to deepen my understanding of key concepts like state management, props, and basic component structure.
 
-## Expanding the ESLint configuration
+The app is designed for train station employees to manage passenger counts. By selecting a train from a drop-down menu, the user can view how many people are currently on board each train.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## What I Learned
 
-- Configure the top-level `parserOptions` property like this:
+- **Component communication via props and lifting state**  
+  Shared data between components effectively by lifting state up to common ancestors.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **Derived state to prevent updates to non-existing trains**  
+  Implemented guarded submission logic to ensure safe and valid updates.
+
+- **Separation of concerns**  
+  Ensured that components update only their own state, avoiding unintended side effects by not modifying external data structures directly.
+
+- **Conditional rendering**  
+  Used conditional logic to reflect real-time user actions and provide responsive feedback.
+
+## Usage
+
+1. The app starts with **Train B1** pre-selected and ready to accept passengers.
+2. Use the controls to increment the number of passengers boarding the train.
+3. Click **Submit** to confirm that the passengers have boarded.
+4. To view or update another train, select it from the drop-down list.
+5. The current passenger count for the selected train will be displayed and updated in real time.
+
+### Demo
+
+![Train stations app demo](/screenshots/train-stations-demo.gif)
+
+## Installation
+
+### Prerequisites
+
+Before you begin, make sure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/) (latest stable version recommended)
+
+Follow these steps to set up and run the project locally:
+
+1. **Clone the repository**
+
+```
+git clone https://github.com/Vlassis-sec/train-stations.git
+
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. **Navigate into the project directory**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+cd train-stations
+```
+
+3. **Install dependencies**
+
+```
+npm install
+```
+
+4. **Start the development server**
+
+```
+npm run dev
+```
+
+5. **Open the app in your browser**
+   Once the server is running, open your browser and go to:
+
+> http:/localhost:5173/
+
+(The exact address and port will be shown in your terminal after running npm run dev.)
