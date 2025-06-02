@@ -1,7 +1,7 @@
 # Train Stations
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Made with React](https://img.shields.io/badge/Made%20with-React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Made with TypeScript](https://img.shields.io/badge/Made%20with-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
 
 ## Description
 
